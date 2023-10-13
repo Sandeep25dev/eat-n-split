@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { FriendsList } from "./FriendsList";
-import { FormAddFriend } from "./FormAddFriend";
-import { FormSplitBill } from "./FormSplitBill";
+import { FriendsList } from "./components/FriendsList";
+import { FormAddFriend } from "./components/FormAddFriend";
+import { FormSplitBill } from "./components/FormSplitBill";
 
 const initialFriends = [
   {
@@ -48,6 +48,7 @@ export default function App() {
 
   function handleSelection(friend) {
     // setSelectedFriend(friend);
+
     setSelectedFriend((cur) => (cur?.id === friend.id ? null : friend));
     setShowAddFriend(false);
   }
@@ -80,6 +81,7 @@ export default function App() {
         <FormSplitBill
           selectedFriend={selectedFriend}
           onSplitBill={handleSplitBill}
+          key={selectedFriend.id}
         />
       )}
     </div>

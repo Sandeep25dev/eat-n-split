@@ -1,4 +1,4 @@
-import { Button } from "./App";
+import { Button } from "../App";
 
 export function Friend({ friendObj, handleSelection, selectedFriend }) {
   const isSelected = selectedFriend?.id === friendObj.id;
